@@ -2,23 +2,25 @@ var finalScore = 73;
 var highScore = 78;
 var levelCompleted = true;
 
-const testHighScore = (finalScore, highScore) => {
-	if(finalScore >= highScore) {
-        return true;
-	}
+const logHighScore = () => {
+	return "New high score! You got " + highScore + " points!";
 };
 
 const endGame = () => {
 	return "Game over!";
 };
 
-const logHighScore = () => {
-	return "New high score! You got " + highScore + " points!";
+
+const testHighScore = (finalScore, highScore) => {
+	if(finalScore >= highScore) {
+        return true;
+	logHighScore()
+	}
 };
 
 if(levelCompleted) {
     if (testHighScore(finalScore, highScore) === true) {
-        logHighScore();
+        console.log(logHighScore());
     }
 	endGame();
 }
